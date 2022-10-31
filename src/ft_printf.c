@@ -22,12 +22,22 @@ int	ft_printf(const char *str, ...)
 				char_readed += ft_increment_putchar(va_arg(args, int));
 			if (str[i] == 's')
 				char_readed += ft_increment_putstr(va_arg(args, char *));
-			if (str[i] == 'd' || str[i] == 'i' || str[i] == 'u')
+			if (str[i] == 'd' || str[i] == 'i')
 			{
 				str_itoa = ft_itoa(va_arg(args, int));
 				char_readed += ft_increment_putstr(str_itoa);
 				free (str_itoa);
 			}
+			if (str[i] == 'u')
+			{
+				str_itoa = ft_increment_itoa(va_arg(args, unsigned int));
+				char_readed += ft_increment_putstr(str_itoa);
+				free (str_itoa);
+			}
+			if (str[i] == 'x')
+				char_readed += ft_dec_to_hex(va_arg(args, int), 1);
+			if (str[i] == 'X')
+				char_readed += ft_dec_to_hex(va_arg(args, int), 2);
 		}
 		else
 		{

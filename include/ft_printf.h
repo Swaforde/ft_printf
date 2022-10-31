@@ -9,5 +9,7 @@ int	ft_printf(const char *str, ...);
 int	ft_increment_putchar(int c);
 int	ft_increment_putstr(char *s);
 int	ft_increment_percent();
+int	ft_dec_to_hex(int n, int mod);
+char	*ft_increment_itoa(unsigned n);
 
 #endif
