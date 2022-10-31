@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME = libftprintf.a
-SRCS = ./src/ft_printf.c ./src/ft_printf_utils.c ./src/ft_unsigned_itoa.c ./src/ft_dec_to_hex.c
+SRCS = ./src/ft_printf.c ./src/ft_printf_utils.c ./src/ft_unsigned_itoa.c ./src/ft_dec_to_hex.c ./src/ft_print_ptr.c
 
 
 OBJS = ${SRCS:.c=.o}

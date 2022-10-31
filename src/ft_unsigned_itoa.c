@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_unsigned_itoa.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tbouvera <tbouvera@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/17 11:53:03 by tbouvera          #+#    #+#             */
+/*   Updated: 2022/10/18 10:43:06 by tbouvera         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/ft_printf.h"
 
 static void	ft_tab_fill_min_int(char *ptr)
@@ -14,7 +26,7 @@ static void	ft_tab_fill_min_int(char *ptr)
 	ptr[9] = '5';
 }
 
-static int	ft_get_size(unsigned nb)
+static int	ft_get_size(unsigned int nb)
 {
 	int	size;
 
@@ -29,7 +41,7 @@ static int	ft_get_size(unsigned nb)
 	return (size);
 }
 
-static void	ft_tab_fill(char *ptr, unsigned nb, int max_index)
+static void	ft_tab_fill(char *ptr, unsigned int nb, int max_index)
 {
 	int	index;
 
@@ -44,7 +56,7 @@ static void	ft_tab_fill(char *ptr, unsigned nb, int max_index)
 		ptr[index] = (nb + '0');
 }
 
-char	*ft_increment_itoa(unsigned n)
+char	*ft_increment_itoa(unsigned int n)
 {
 	int		size;
 	char	*ptr;

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   ft_print_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbouvera <tbouvera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,35 +12,49 @@
 
 #include "../include/ft_printf.h"
 
-int	ft_increment_putchar(int c)
+int	ft_len(uintptr_t ptr)
 {
-	write (1, &c, 1);
-	return (1);
+	int			len;
+	uintptr_t	copy;
+
+	len = 0;
+	copy = ptr;
+	while (copy != 0)
+	{
+		copy = copy / 16;
+		len ++;
+	}
+	return (len);
 }
 
-int	ft_increment_putstr(char *s)
+void	ft_put_ptr(uintptr_t num)
 {
-	int	index;
-	int	return_value;
-
-	index = 0;
-	return_value = 0;
-	if (s == NULL)
+	if (num >= 16)
 	{
-		write (1, "(null)", 6);
-		return (6);
+		ft_put_ptr(num / 16);
+		ft_put_ptr(num % 16);
 	}
-	while (s[index] != '\0')
+	else
 	{
-		write (1, s + index, 1);
-		index ++;
-		return_value++;
+		if (num <= 9)
+			ft_putchar_fd(num + '0', 1);
+		else
+			ft_putchar_fd(num - 10 + 'a', 1);
 	}
-	return (return_value);
 }
 
-int	ft_increment_percent(void)
+int	ft_print_ptr(unsigned long long ptr)
 {
-	write (1, "%", 1);
-	return (1);
+	int	len;
+
+	len = 0;
+	len += write(1, "0x", 2);
+	if (ptr == 0)
+		len += write(1, "0", 1);
+	else
+	{
+		ft_put_ptr(ptr);
+		len += ft_len(ptr);
+	}
+	return (len);
 }
