@@ -2,6 +2,9 @@
 
 int	main(void)
 {
-	printf ("%d", ft_isdigit('c'));
+	int	t;
+
+	t = 25;
+	printf("->%d<-", ft_printf("%%"));
 	return (1);
 }
