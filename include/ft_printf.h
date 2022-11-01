@@ -6,7 +6,7 @@
 /*   By: tbouvera <tbouvera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:53:03 by tbouvera          #+#    #+#             */
-/*   Updated: 2022/10/18 10:43:06 by tbouvera         ###   ########.fr       */
+/*   Updated: 2022/11/01 10:47:14 by tbouvera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int		ft_increment_putstr(char *s);
 int		ft_increment_percent(void);
 int		ft_dec_to_hex(unsigned int n, int mod);
 char	*ft_increment_itoa(unsigned int n);
-void	ft_convert(unsigned int n, int mod);
 int		ft_print_ptr(unsigned long long ptr);
 
 #endif

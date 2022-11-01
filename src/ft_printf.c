@@ -6,13 +6,13 @@
 /*   By: tbouvera <tbouvera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:53:03 by tbouvera          #+#    #+#             */
-/*   Updated: 2022/11/01 10:32:12 by tbouvera         ###   ########.fr       */
+/*   Updated: 2022/11/01 10:53:22 by tbouvera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-int	ft_i(va_list args)
+static int	ft_i(va_list args)
 {
 	int		len;
 	char	*str_itoa;
@@ -26,7 +26,7 @@ int	ft_i(va_list args)
 	return (len);
 }
 
-int	ft_u(va_list args)
+static int	ft_u(va_list args)
 {
 	int		len;
 	char	*str_itoa;
@@ -40,7 +40,7 @@ int	ft_u(va_list args)
 	return (len);
 }
 
-int	ft_check_format(const char *str, int i, va_list args)
+static int	ft_check_format(const char *str, int i, va_list args)
 {
 	int	char_readed;
 

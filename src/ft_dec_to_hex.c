@@ -6,13 +6,13 @@
 /*   By: tbouvera <tbouvera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:53:03 by tbouvera          #+#    #+#             */
-/*   Updated: 2022/10/18 10:43:06 by tbouvera         ###   ########.fr       */
+/*   Updated: 2022/11/01 10:53:20 by tbouvera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-void	ft_convert(unsigned int n, int mod)
+static void	ft_convert(unsigned int n, int mod)
 {
 	if (n >= 16)
 	{

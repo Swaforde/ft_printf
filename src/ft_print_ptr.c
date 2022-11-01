@@ -6,13 +6,13 @@
 /*   By: tbouvera <tbouvera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:53:03 by tbouvera          #+#    #+#             */
-/*   Updated: 2022/10/18 10:43:06 by tbouvera         ###   ########.fr       */
+/*   Updated: 2022/11/01 10:53:21 by tbouvera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-int	ft_len(uintptr_t ptr)
+static int	ft_len(uintptr_t ptr)
 {
 	int			len;
 	uintptr_t	copy;
@@ -27,7 +27,7 @@ int	ft_len(uintptr_t ptr)
 	return (len);
 }
 
-void	ft_put_ptr(uintptr_t num)
+static void	ft_put_ptr(uintptr_t num)
 {
 	if (num >= 16)
 	{
